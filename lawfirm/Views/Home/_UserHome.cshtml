@@ -1,0 +1,15 @@
+﻿@using lawfirm.Models.Home
+@model HomeUserModel
+
+@if (string.IsNullOrEmpty(Model.Email))
+            {
+    <div style="position: absolute; right: 0">
+        @Html.ActionLink("Đăng nhập", "Index", "Login", null,new { @style = "color:#e2e2e2;font-size: 13px" }) | @Html.ActionLink("Đăng ký", "Index", "Login", null, new { @style = "color:#e2e2e2;font-size: 13px" })
+    </div>
+}
+else
+{
+    <div style="position: absolute; right: 0">
+        @Model.Email | @Html.ActionLink("Đăng xuất", "Logout", "Login", null, new { @style = "color:#e2e2e2;font-size: 13px" })
+    </div>
+}

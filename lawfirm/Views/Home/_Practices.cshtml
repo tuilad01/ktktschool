@@ -1,0 +1,22 @@
+﻿@model lawfirm.Models.Home.HomePracticesModel
+
+<div class="featured">
+    @*<h2>Chọn để trắc nghiệm...</h2>*@
+    <ul class="clearfix custom-clearfix">
+        @foreach (var testType in Model.ListPracticeses)
+        {
+            <li>
+                <div class="frame1">
+                    <div class="box">
+                        <a href="/Practices/Test/@testType.SystemName"><img src="@testType.ImageUrl" alt="Img" class="img-practices"></a>
+                    </div>
+                </div>
+                <p>
+                    <b> <a href="/Practices/Test/@testType.SystemName" class="title-practices">@testType.Name</a> </b>
+                    @testType.Description
+                </p>
+                <!-- <a href="index.html" class="more">bắt đầu</a> -->
+            </li>
+        }
+    </ul>
+</div>

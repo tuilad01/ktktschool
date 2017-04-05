@@ -1,0 +1,15 @@
+﻿
+@model lawfirm.Areas.Admin.Models.Home.HomeUserModel
+
+@if (!string.IsNullOrEmpty(Model.Email))
+            {
+    <li>
+        <a href="#" style="overflow: hidden"><i class="fa fa-user fa-fw" > @Model.Email</i></a>
+    </li>
+
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Html.Raw(Url.Action("Logout","Login"))"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+
+}

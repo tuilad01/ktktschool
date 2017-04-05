@@ -1,0 +1,237 @@
+﻿@using lawfirm.Common
+@using lawfirm.Models.Home
+@model lawfirm.Models.Practices.PracticesListModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPractices.cshtml";
+}
+<style>
+    #contents {
+        margin-bottom: 0;
+    }
+</style>
+@Html.HiddenFor(model => model.TypeId)
+<div class="clearfix">
+    <div class="sidebar">
+        @if (Session[CommonConstants.USER_SESSION] != null)
+        {
+            <div>
+                <h2>THÔNG TIN CÁ NHÂN</h2>
+                <ul id="user-profile">
+                </ul>
+            </div>
+        
+            <div>
+                <h2>BÀI TEST CHƯA HOÀN THÀNH</h2>
+                <div class="box-testing"></div>             
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $.post("@Html.Raw(Url.Action("GetTesting", "Practices"))")
+                        .done(function(data) {
+                            $(".box-testing").html("");
+                            data.forEach(function(v) {
+                                var link = '@Html.ActionLink("nameTest", "Tintuc", "News", new {id = "idTinTuc"}, null)<br/>';
+                                link = link.replace('nameTest', v.Name);
+                                link = link.replace("idTinTuc", v.Id);
+                                $(".box-testing").append(link);
+                            });
+                        })
+                        .fail(function(data) {
+                            alert("server error");
+                        });
+
+                    $.post("@Html.Raw(Url.Action("GetUser", "Login"))")
+                        .done(function(data) {
+                            if (data) {
+                                $("#user-profile").append("<p>Họ và tên: " + data.FullName + "</p>");
+                                $("#user-profile").append("<p>Email: " + data.Email + "</p>");
+                                $("#user-profile").append("<p>Điểm: " + data.Note + "</p>");
+                            }
+                        });
+                });
+            </script>
+        }
+        else
+        {
+            <div>
+                <h2>Bạn chưa đăng ký tài khoản</h2>
+                <p>Vui lòng nhấn vào <a href="/login" style="color: inherit;text-decoration: underline">đây</a> để đăng ký tài khoản</p>
+            </div>
+        }
+
+    </div>
+    <div class="main" ng-app="testApp" ng-controller="testCtr" style="margin-top: 31px" ng-cloak="">
+        <div class="box-test">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-sm-6">Số câu hỏi (*)</label>
+                        <div class="col-sm-6">
+                            <input ng-model="test.quantityQuestion" type="number" class="form-control" placeholder="Số lượng câu hỏi"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-sm-6">Thời gian</label>
+                        <div class="col-sm-6">
+                            <input ng-model="test.amountOfTime" type="number" class="form-control" placeholder="VD: 50 (thời gian được tính theo phút)"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-sm-6">Cấp độ</label>
+                        <div class="col-sm-6">
+                            <select class="form-control"
+                                    name="questionLevel" id="questionLevel"
+                                    ng-options="option.Name for option in test.QuestionLevel"
+                                    ng-model="test.questionLevel"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" ng-show="test.LevelSchool.length > 0">
+                    <div class="form-group">
+                        <label class="control-label col-sm-6">Trình độ (*)</label>
+                        <div class="col-sm-6">
+                            <select class="form-control"
+                                    name="levelSchool" id="levelSchool"
+                                    ng-options="option.Name for option in test.LevelSchool"
+                                    ng-model="test.levelSchool"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" ng-show="(test.Class | filter:{LevelSchoolId: test.levelSchool.Id}:true).length > 0 ">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-sm-6">Lớp (*)</label>
+                        <div class="col-sm-6">
+                            <select class="form-control"
+                                    name="class" id="class"
+                                    ng-options="option.Name for option in test.Class | filter:{LevelSchoolId: test.levelSchool.Id}:true"
+                                    ng-model="test.class"
+                                    ng-disabled="test.levelSchool === undefined"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" ng-show="(test.Class | filter:{LevelSchoolId: test.levelSchool.Id}:true).length > 0 ">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-sm-6">Môn học (*)</label>
+                        <div class="col-sm-6">
+                            <select class="form-control"
+                                    name="subject" id="subject"
+                                    ng-options="option.Name for option in test.Subject | filter:{ClassId: test.class.Id}:true"
+                                    ng-model="test.subject"
+                                    ng-disabled="test.class === undefined"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4" ng-show="(test.Class | filter:{LevelSchoolId: test.levelSchool.Id}:true).length <= 0 && (test.SubjectOther.length > 0 || (test.SubjectOther | filter:{ClassId: test.class.Id}:true).length > 0)">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-sm-6">Chủ đề (*)</label>
+                        <div class="col-sm-6">
+                            <select class="form-control"
+                                    name="subjectOther" id="subjectOther"
+                                    ng-options="option.Name for option in test.SubjectOther | filter:{ClassId: test.class.Id}:true"
+                                    ng-model="test.subjectOther"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" style="height: inherit">
+                        <label class="control-label col-md-4">Tên bài kiểm tra (*)</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="txt-nameTest" ng-model="test.nameTest" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 20px 0;width: 107%;">
+                <div class="col-md-6">
+                    <p class="text text-danger pull-left" ng-show="practiceTest !== undefined || practiceTest !== null || practiceTest.length > 0 ">Thời gian còn lại: <span style="font-size: 20px; font-weight: bold">{{practiceTest.AmountTime > 0 ? (countDown | secondsToDateTime | date: "HH:mm:ss") : "------"}}</span> </p>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-default pull-right"
+                            ng-show="test.quantityQuestion > 0 && (test.subjectOther !== undefined || test.subject !== undefined) && (practiceTest === undefined || practiceTest === null) && test.nameTest != ''"
+                            ng-click="StartTest()">
+                        Bắt đầu làm bài
+                    </button>
+                    <button type="button" class="btn btn-default pull-right"
+                            ng-show="test != {}"
+                            ng-click="btnClear()">
+                        Hủy
+                    </button>
+                    <button class="btn btn-default pull-right"
+                            ng-show="practiceTest !== undefined && practiceTest !== null"
+                            ng-click="doneTest()">
+                        Hoàn thành
+                    </button>
+                </div>
+            </div>
+            <div class="row" ng-show="praticeTest !== undefined || practiceTest !== null || praticeTest.length > 0" style="width: 107%;">
+                <div class="col-md-12" style="background-color: white">
+                    <div class="wrapper-box-question" style="margin: 10px 0" ng-repeat="question in practiceTest.ListTest track by $index">
+                        <div class="box-question">
+                            {{$index + 1}}. {{question.Name}}
+                        </div>
+                        <div class="box-anwser">
+                            @*<input type="radio" name="cau1" />A. 10 <input type="radio" name="cau1" />B. 11<input type="radio" name="cau1" />C. 12 <input type="radio" name="cau1" />D. 13*@
+                            <p ng-repeat="ans in question.ListAnwsers">
+                                <input type="radio" name="cauhoi_{{question.Id}}" value="dapan_{{ans.Id}}"
+                                       ng-click="addAns(question.Id,ans)" /> {{ans.AnswerName}}. {{ans.Description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+        @*<h1>NỘI DUNG TRẮC NGHIỆM</h1>*@
+        <div class="box-testDone" ng-show="testResult !== undefined && testResult !== null">
+            <div class="">
+                <h1>
+                    Kết quả bài kiểm tra
+                </h1>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{testResult.NumberRight}}/{{testResult.NumberQuestion}}</span>
+                        Số câu đúng:
+                    </li>
+                    <li class="list-group-item">
+                        <div class="progress" style="float: right; width: 120px;">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{testResult.ResultPrecent}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': testResult.ResultPrecent+'%'}">
+                                {{testResult.ResultPrecent}}%
+                            </div>
+                        </div>
+                        Tỷ lệ %:
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{testResult.Result}}</span>
+                        Đánh giá:
+                    </li>
+                    <li class="list-group-item">
+                        <span class="label label-success" style="float: right;border-radius: 1em;padding: 5px 10px;">Hoàn thành</span>
+                        Trạng thái:
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{testResult.StartAt}}</span>
+                        Bắt đầu:
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{testResult.EndAt}}</span>
+                        Kết thúc:
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

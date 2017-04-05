@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link href="~/Content/Admin/Login/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+
+            @Html.ValidationSummary(true)
+            @*<input type="text" placeholder="name"/>
+                <input type="password" placeholder="password"/>
+                <input type="text" placeholder="email address"/>
+                <button>create</button>
+                <p class="message">
+                    Already registered? <a href="#">Sign In</a>
+                </p>*@
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
+            {
+
+                <input type="text" placeholder="Email" name="Email"/>
+                <input type="password" placeholder="Password" name="Password" />
+                <button>login</button>
+                @*<p class="message">
+                        Not registered? <a href="#">Create an account</a>
+                    </p>*@
+            }
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $('.message a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        });
+    </script>
+</body>
+</html>

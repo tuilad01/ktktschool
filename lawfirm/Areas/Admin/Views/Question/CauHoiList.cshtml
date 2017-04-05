@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "List Question";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="pull-right" style="padding: 0 20px 20px">
+    <a href="@Html.Raw(Url.Action("CauHoiCreate","Question"))" class="btn btn-primary"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Create</a>
+</div>
+
+<table class="display" id="grid-datatable">
+    <thead>
+        <tr>
+            <th>Câu hỏi</th>
+            <th>Description</th>
+            <th>Kích hoạt</th>
+            <th>TestType</th>
+            <th>QuestionLevel</th>
+            <th>Mon học</th>
+            <th>Answer</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#grid-datatable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "pagingType": "full_numbers",
+            "autoWidth": false,
+            "ajax": {
+                "url": "@Html.Raw(Url.Action("CauHoiList","Question"))",
+                "type": 'POST',
+                "contentType": 'application/json; charset=utf-8',
+                'data': function (data) { return data = JSON.stringify(data); }
+            },
+        "columns":[
+            { "data": "TenCauHoi" },
+            { "data": "GhiChu" },
+            { "data": "KichHoat" },
+            { "data": "TestType" },
+            { "data": "QuestionLevel" },
+            { "data": "MonHoc" },
+            { "data": "DapAn" },
+        ],
+        "columnDefs": [{
+            "targets": 7,
+            "data": "Id",
+            "render": function (data) {
+                return "<a class='btn btn-primary' href='CauHoiEdit/" + data + "'><i class='fa fa-pencil-square-o' aria-hidden='true'></i> Edit</a>&#9;<a  class='btn btn-danger' href='CauHoiDelete/" + data + "'><i class='fa fa-trash-o' aria-hidden='true'></i> Delete</a>";
+            }
+        }],
+
+        });
+    });
+</script>

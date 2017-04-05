@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "List User";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="pull-right" style="padding: 0 20px 20px">
+    <a href="@Html.Raw(Url.Action("Create","User"))" class="btn btn-primary"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Create</a>
+</div>
+
+<table class="display" id="grid-datatable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Role</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+</table>
+
+@*<script>
+    $(document).ready(function () {
+        var editor = new $.fn.dataTable.Editor({
+            ajax: "@Html.Raw(Url.Action("List", "User"))",
+            table: "#grid-datatable",
+            fields: [{
+                label: "First name:",
+                name: "first_name"
+            }, {
+                label: "Last name:",
+                name: "last_name"
+            }, {
+                label: "Position:",
+                name: "position"
+            }, {
+                label: "Office:",
+                name: "office"
+            }, {
+                label: "Extension:",
+                name: "extn"
+            }, {
+                label: "Start date:",
+                name: "start_date"
+            }
+            ]
+        });
+
+        var table = $('#grid-datatable').DataTable({
+            dom: "Bfrtip",
+            ajax: "@Html.Raw(Url.Action("List","User"))",
+            columns: [
+                {
+                    data: null, render: function (data, type, row) {
+                        // Combine the first and last names into a single table field
+                        return data.first_name + ' ' + data.last_name;
+                    }
+                },
+                { data: "position" },
+                { data: "office" },
+                { data: "extn" },
+                { data: "start_date" },
+            ],
+            select: true,
+            buttons: [
+                { extend: "create", editor: editor },
+                { extend: "edit", editor: editor },             
+                { extend: "remove", editor: editor }
+            ]
+        });
+    });
+</script>*@
+
+
+<script>
+    $(document).ready(function() {
+        var table = $('#grid-datatable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "pagingType": "full_numbers",
+            "autoWidth": false,
+            "ajax": {
+                "url": "@Html.Raw(Url.Action("List","User"))",
+                "type": 'POST',
+                "contentType": 'application/json; charset=utf-8',
+                'data': function (data) { return data = JSON.stringify(data); }
+            },
+        "columns":[
+            { "data": "FullName" },
+            { "data": "Email" },
+            { "data": "Phone" },
+            { "data": "Address" },
+            { "data": "RoleName" },
+        ],
+        "columnDefs": [{
+            "targets": 5,
+            "data": "Id",
+            //"defaultContent": "<a href='Edit/data'>Click!</button>"
+            "render": function (data) {
+                return "<a class='btn btn-primary' href='Edit/" + data + "'><i class='fa fa-pencil-square-o' aria-hidden='true'></i> Edit</a>&#9;<a  class='btn btn-danger' href='Delete/" + data + "'><i class='fa fa-trash-o' aria-hidden='true'></i> Delete</a>";
+            }
+        }],
+        
+        });
+       
+        //    var data = table.row($(this).parents('tr')).data();
+        //    alert(data[0] + "'s salary is: " + data[5]);
+        //});
+    });
+</script>

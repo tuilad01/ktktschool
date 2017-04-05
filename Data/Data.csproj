@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{638247F7-6F85-4ED3-AAB0-3BBCD53F62A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\News\NewDao.cs" />
+    <Compile Include="Dao\News\NewRequest.cs" />
+    <Compile Include="Dao\News\NewResponse.cs" />
+    <Compile Include="Dao\Question\CauHoiDtoResult.cs" />
+    <Compile Include="Dao\Question\QuestionDao.cs" />
+    <Compile Include="Dao\Question\QuestionDtoResult.cs" />
+    <Compile Include="Dao\Test\CapHoc.cs" />
+    <Compile Include="Dao\Test\DapAn.cs" />
+    <Compile Include="Dao\Test\DoneTestResponse.cs" />
+    <Compile Include="Dao\Test\LoginResult.cs" />
+    <Compile Include="Dao\Test\RegisterDtoResult.cs" />
+    <Compile Include="Dao\Test\Result.cs" />
+    <Compile Include="Dao\Test\StatusTetst.cs" />
+    <Compile Include="Dao\Test\TestDao.cs" />
+    <Compile Include="Dao\Test\TestingResponse.cs" />
+    <Compile Include="Dao\Test\TestResponse.cs" />
+    <Compile Include="Dao\Test\TestType.cs" />
+    <Compile Include="Dao\Test\Type.cs" />
+    <Compile Include="Dao\Users\UserDao.cs" />
+    <Compile Include="Dao\Users\UserType.cs" />
+    <Compile Include="EF\lawfirmDbContext.cs" />
+    <Compile Include="EF\TN_AcountType.cs" />
+    <Compile Include="EF\TN_CapHoc.cs" />
+    <Compile Include="EF\TN_CauHoi.cs" />
+    <Compile Include="EF\TN_CauHoi_DapAn.cs" />
+    <Compile Include="EF\TN_Country.cs" />
+    <Compile Include="EF\TN_DapAn.cs" />
+    <Compile Include="EF\TN_Districts.cs" />
+    <Compile Include="EF\TN_Job.cs" />
+    <Compile Include="EF\TN_KhoiLopHoc.cs" />
+    <Compile Include="EF\TN_MonHoc.cs" />
+    <Compile Include="EF\TN_NhomMonHoc.cs" />
+    <Compile Include="EF\TN_Provinces.cs" />
+    <Compile Include="EF\TN_QuestionLevel.cs" />
+    <Compile Include="EF\TN_Questions.cs" />
+    <Compile Include="EF\TN_Question_DapAn.cs" />
+    <Compile Include="EF\TN_Result.cs" />
+    <Compile Include="EF\TN_StatusTest.cs" />
+    <Compile Include="EF\TN_Subject.cs" />
+    <Compile Include="EF\TN_Test.cs" />
+    <Compile Include="EF\TN_TestDetails.cs" />
+    <Compile Include="EF\TN_TestType.cs" />
+    <Compile Include="EF\TN_TinTuc.cs" />
+    <Compile Include="EF\TN_TinTucLoai.cs" />
+    <Compile Include="EF\TN_Type.cs" />
+    <Compile Include="EF\TN_User.cs" />
+    <Compile Include="EF\TN_UserType.cs" />
+    <Compile Include="EF\TN_Wards.cs" />
+    <Compile Include="Model\Datatablejs\DTParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

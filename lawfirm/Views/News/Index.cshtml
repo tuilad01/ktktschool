@@ -1,0 +1,37 @@
+﻿
+@model lawfirm.Models.News.ListTintucModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clearfix">
+    <div class="">
+        <h1>@Model.NewsTypeName</h1>
+        <ul class="news">
+            @if (Model.ListTinTuc.Any())
+            {
+                foreach (var news in Model.ListTinTuc)
+                {
+                    <li>
+                        <div class="box">
+                            <img src="~/Content/Client/images/bride-sideview.jpg" alt="Img" height="245" width="213">
+                        </div>
+                        <p class="info">
+                            @news.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss") 
+                            @*<span class="author">Manes Winchester</span>*@
+                        </p>
+                        <h2>@news.Title</h2>
+                        <p>
+                            @news.Short
+                        </p>
+                        <a href="@Html.Raw(Url.Action("Tintuc","News",new {id=news.Id}))" class="more">Xem thêm</a>
+                    </li>
+                    
+                }
+            }
+           
+        </ul>
+    </div>
+</div>
+

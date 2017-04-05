@@ -1,0 +1,26 @@
+﻿@model lawfirm.Models.News.TintucModel
+@{
+    ViewBag.Title = "Tin tức";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clearfix">
+    <div class="main">
+        <div class="images">
+            <img src="images/family.png" alt="Img" height="237" width="205">
+        </div>
+        <div class="details">
+            @*<p class="info">
+                
+            </p>*@
+            <h2>@Model.Title</h2>
+            <p>
+                @Model.Short
+            </p>
+            <p>
+                @Model.Decription
+            </p>
+        </div>
+    </div>
+</div>
+

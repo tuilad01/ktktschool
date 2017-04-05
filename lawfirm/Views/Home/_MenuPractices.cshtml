@@ -1,0 +1,9 @@
+﻿@using lawfirm.Models.Home
+@model List<MenuPractices>
+
+<ul>
+    @foreach (var m in Model)
+    {
+        <li><a href="/Practices/Test/@m.NameUrl">@m.Name</a></li>
+    }
+</ul>

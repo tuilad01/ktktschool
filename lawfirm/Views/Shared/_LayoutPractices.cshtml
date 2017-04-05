@@ -1,0 +1,151 @@
+﻿@using lawfirm.Common
+@using lawfirm.Models.Home
+<!DOCTYPE HTML>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Law Firm</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bxslider.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Client/css/style.css" rel="stylesheet" />
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+
+
+    <script src="~/Scripts/jquery.bxslider.js"></script>
+    <style>
+        #test-practices {
+            position: relative;
+        }
+
+            #test-practices ul {
+                position: absolute;
+                top: 20px;
+                left: 0;
+                list-style: none;
+                padding: 10px 5px;
+                background: #58614e;
+                /*background: rgba(88, 97, 78, 0.7);*/
+                display: none;
+                z-index: 99;
+            }
+
+                #test-practices ul li {
+                    float: none;
+                    margin-left: 0;
+                    font: bold 13px/24px Times, "Times New Roman", serif;
+                    color: #b8c6ac;
+                    text-shadow: 1px 1px #000;
+                    text-transform: uppercase;
+                    /*text-decoration: underline;*/
+                    white-space: nowrap;
+                }
+
+                    #test-practices ul li:hover {
+                        color: #fff;
+                    }
+
+            #test-practices:hover ul {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+
+        <div class="clearfix" style="position: relative">
+
+            <div class="logo">
+
+                <a href="@Url.Action("Index", "Home")"><img src="~/Content/Client/images/logo2.png" alt="LOGO" height="75" width="250"></a>
+            </div>
+
+            <ul class="navigation">
+                <li class="active">
+                    @Html.ActionLink("TRANG CHỦ", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("GIỚI THIỆU", "Index", "About")
+                </li>
+                <li id="test-practices">
+                    <a href="">TRẮC NGHIỆM</a>
+                    @{Html.RenderAction("_MenuPractices", "Home");}
+                </li>
+                <li>
+                    @Html.ActionLink("HỎI ĐÁP", "Index", "Certificate")
+                </li>
+                <li>
+                    @Html.ActionLink("TIN TỨC", "Index", "News")
+                    @*<div>
+                            <a href="singlepost.html">News Single Post</a>
+                        </div>*@
+                </li>
+                <li>
+                    @Html.ActionLink("LIÊN HỆ", "Index", "Contact")
+                </li>
+            </ul>
+            <div style="position: absolute; right: 0">
+                <span style="font-weight: bold; color: #ffffff;font-size:22px">Hotline 0978.876.379</span>
+            </div>
+            @*@{ Html.RenderAction("_UserHome", "Home");}*@
+
+            @*<div style="position: absolute; bottom: -30px; right: 0">
+                    <span style="color: darkred; font-size: 20px;font-weight: bold">HOTLINE 19009199</span>
+                </div>*@
+        </div>
+
+    </div>
+    <div id="contents">
+
+        @RenderBody()
+
+    </div>
+    <div id="footer">
+        <div class="clearfix">
+            <!-- <div class="section"> -->
+            <!-- <h4>Latest News</h4> -->
+            <!-- <p> -->
+            <!-- This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link. -->
+            <!-- </p> -->
+            <!-- </div> -->
+            <div class="section contact">
+                <h4>Contact Us</h4>
+                <p>
+                    <span>Address:</span> 4 Nguyễn Đình Chiễu, P. Đakao, Quận 1, TP Hồ Chí Minh
+                </p>
+                <p>
+                    <span>Phone:</span> 0978.678.379
+                </p>
+                <p>
+                    <span>Email:</span> tckiet@gmail.com
+                </p>
+            </div>
+            @*<div class="section">
+                    <h4>SEND US A MESSAGE</h4>
+                    <p>
+                        If you're having problems editing this website template, then don't hesitate to ask for help on the Forums.
+                    </p>
+                    <a class="subscribe">Click to send us an email</a>
+                </div>*@
+        </div>
+        <div id="footnote">
+            <div class="clearfix">
+                <div class="connect">
+                    <a href="http://freewebsitetemplates.com/go/facebook/" class="facebook"></a><a href="http://freewebsitetemplates.com/go/twitter/" class="twitter"></a><a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus"></a><a href="http://pinterest.com/fwtemplates/" class="pinterest"></a>
+                </div>
+                <p>
+                    © Copyright 2023 Manes Winchester. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/testApp/testApp.js"></script>
+</body>
+</html>

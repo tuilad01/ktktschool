@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div id="adbox">
+    <div class="clearfix">
+        <img src="~/Content/Client/images/family-large.jpg" alt="Img" height="382" width="594">
+        <div class="detail">
+            <h1>It’s never easy...<br> When it comes to family.</h1>
+            <p>
+                But we can set<br> everything straight.
+            </p>
+        </div>
+    </div>
+</div>*@
+
+@*<div class="highlight">
+    <div class="clearfix">
+        <div class="testimonial">
+            <h2>Testimonials</h2>
+            <p>
+                &ldquo;Aenean ullamcorper purus vitae nisl tristique sollicitudin. Quisque vestibulum, erat ornare.
+            </p>
+            <span>-John Doe and Jane Doe-</span>
+        </div>
+        <h1>The Manes Winchester Promise</h1>
+        <p>
+            This website template has been designed by <a href="http://www.freewebsitetemplates.com/">
+                Free Website Templates
+            </a> for you, for free. You can replace all this text with your own text.
+            You can remove any link to our website from
+            this website template, you're free to use this website template without linking back to us.
+            <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
+        </p>
+    </div>
+</div>*@
+
+@{ Html.RenderAction("_Practices", "Home");}
+<div class="">
+    <div class="clearfix custom-clearfix"  style="padding: 0px 24px 0 0;">
+
+        <ul class="bxslider">
+            <li><img src="~/Content/images/bia_2.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_1.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_3.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_4.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_5.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_6.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_7.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_8.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_9.jpg" width="100%" /></li>
+            <li><img src="~/Content/images/bia_10.jpg" width="100%" /></li>
+        </ul>
+        <script>
+            $(document).ready(function () {
+                $('.bxslider').bxSlider({
+                    auto: true,
+                });
+            });
+        </script>
+    </div>
+</div>
+
