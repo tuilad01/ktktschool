@@ -199,11 +199,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PracticesController.cs" />
     <Compile Include="Areas\Admin\Controllers\QuestionController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\Home\HomeUserModel.cs" />
     <Compile Include="Areas\Admin\Models\Login\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Models\News\NewModel.cs" />
     <Compile Include="Areas\Admin\Models\Question\CauHoiModel.cs" />
     <Compile Include="Areas\Admin\Models\Question\MonHocModel.cs" />
     <Compile Include="Areas\Admin\Models\Question\QuestionModel.cs" />
@@ -1153,6 +1155,10 @@
     <Content Include="Areas\Admin\Views\Question\CauHoiCreate.cshtml" />
     <Content Include="Areas\Admin\Views\Question\CauHoiEdit.cshtml" />
     <Content Include="Areas\Admin\Views\Question\CauHoiDelete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\List.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1215,6 +1221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Upload\images\" />
     <Folder Include="Services\Authen\" />
   </ItemGroup>
   <ItemGroup>

@@ -23,7 +23,6 @@ namespace Data.EF
         public int? TypeId { get; set; }
 
         [Required]
-        [MaxLength(500)]
         public byte[] Image { get; set; }
 
         public virtual TN_TinTucLoai TN_TinTucLoai { get; set; }

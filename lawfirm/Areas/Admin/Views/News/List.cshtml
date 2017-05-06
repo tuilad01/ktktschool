@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách tin tức";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="pull-right" style="padding: 0 20px 20px">
+    <a href="@Html.Raw(Url.Action("Create","News"))" class="btn btn-primary"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Create</a>
+</div>
+
+<table class="display" id="grid-datatable">
+    <thead>
+        <tr>
+            <th>Tiêu đề</th>
+            <th>Mô tả ngắn</th>
+            <th>Nội dung chi tiết</th>
+            @*<th>Hình ảnh</th>*@
+            <th>Kích hoạt</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#grid-datatable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "pagingType": "full_numbers",
+            "autoWidth": false,
+            "ajax": {
+                "url": "@Html.Raw(Url.Action("List","News"))",
+                "type": 'POST',
+                "contentType": 'application/json; charset=utf-8',
+                'data': function (data) { return data = JSON.stringify(data); }
+            },
+        "columns":[
+            { "data": "Title" },
+            { "data": "Short" },
+            { "data": "Detail" },
+            //{ "data": "Image" },
+            { "data": "IsActive" },
+        ],
+        "columnDefs": [{
+            "targets": 4,
+            "data": "Id",
+            "render": function (data) {
+                return "<a class='btn btn-primary' href='Edit/" + data + "'><i class='fa fa-pencil-square-o' aria-hidden='true'></i> Edit</a>&#9;<a  class='btn btn-danger' href='Delete/" + data + "'><i class='fa fa-trash-o' aria-hidden='true'></i> Delete</a>";
+            }
+        }]
+        });
+    });
+</script>

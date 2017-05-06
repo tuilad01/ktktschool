@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Data.Dao.Question;
 using Data.Dao.Test;
 using Data.EF;
 using Data.Model.Datatablejs;
 using lawfirm.Areas.Admin.Models.Question;
-using lawfirm.Models.Practices;
 
 namespace lawfirm.Areas.Admin.Controllers
 {
@@ -26,7 +23,7 @@ namespace lawfirm.Areas.Admin.Controllers
         // GET: Admin/Question
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("List");
         }
 
         public ActionResult List()

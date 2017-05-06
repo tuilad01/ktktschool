@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Data.Dao.News
 {
-    public class NewResponse
-    {
-        public List<NewDetail> News { get; set; } 
-    }
-
-    public class NewDetail
+    public class NewDtoResult
     {
         public int Id { get; set; }
+
         public string Title { get; set; }
+
+        public byte[] ImageId { get; set; }
+
         public string Short { get; set; }
-        public string Decription { get; set; }
-        public byte[] ImgUrl { get; set; }
-        public DateTime CreatedAt { get; set; }
+
+        public string Detail { get; set; }
+
         public bool IsActive { get; set; }
+
         public int NewTypeId { get; set; }
     }
 }

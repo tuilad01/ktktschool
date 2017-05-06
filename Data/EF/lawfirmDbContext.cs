@@ -180,10 +180,6 @@ namespace Data.EF
                 .WithOptional(e => e.TN_TestType)
                 .HasForeignKey(e => e.TestTypeId);
 
-            modelBuilder.Entity<TN_TinTuc>()
-                .Property(e => e.Image)
-                .IsFixedLength();
-
             modelBuilder.Entity<TN_TinTucLoai>()
                 .HasMany(e => e.TN_TinTuc)
                 .WithOptional(e => e.TN_TinTucLoai)

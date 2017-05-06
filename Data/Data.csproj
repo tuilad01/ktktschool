@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\News\NewDao.cs" />
+    <Compile Include="Dao\News\NewDtoResult.cs" />
     <Compile Include="Dao\News\NewRequest.cs" />
     <Compile Include="Dao\News\NewResponse.cs" />
     <Compile Include="Dao\Question\CauHoiDtoResult.cs" />
