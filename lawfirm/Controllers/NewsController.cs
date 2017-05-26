@@ -18,7 +18,7 @@ namespace lawfirm.Controllers
         // GET: News
         public ActionResult Index(int id = 0)
         {
-            var query = _newsDao.GetAllNewsByTypeId(1,5);
+            var query = _newsDao.GetAllNewsByTypeId(1,10);
             var model = new ListTintucModel
             {
                 ListTinTuc = query.News.Select(d => new TintucModel()
@@ -29,10 +29,10 @@ namespace lawfirm.Controllers
                     Decription = d.Decription,
                     Title = d.Title,
                     Short = d.Short
-                }).ToList()
+                }).ToList(),
+                NewsTypeName = _newsDao.GeTinTucLoaiById(1)?.Name
             };
 
-            model.NewsTypeName = _newsDao.GeTinTucLoaiById(1)?.Name;
             return View(model);
         }
 
@@ -47,15 +47,30 @@ namespace lawfirm.Controllers
         {
             var query = _newsDao.GetNewsById(id);
             if (query == null) return RedirectToAction("Index");
-            var model = new TintucModel()
+            var model = new DetailTinTucModel()
             {
-                Id = query.Id,
-                ImgUrl = query.ImgUrl,
-                Decription = query.Decription,
-                Title = query.Title,
-                Short = query.Short,
-                CreatedAt = query.CreatedAt
+                TinTuc = new TintucModel()
+                {
+                    Id = query.Id,
+                    ImgUrl = query.ImgUrl,
+                    Decription = query.Decription,
+                    Title = query.Title,
+                    Short = query.Short,
+                    CreatedAt = query.CreatedAt
+                }
             };
+
+            var othernews = _newsDao.GetAllNewsByTypeId(query.NewTypeId, 5, query.Id);
+
+            model.TinTucCungLoai = othernews.News.Select(d => new TintucModel()
+            {
+                Id = d.Id,
+                Title = d.Title,
+                Short = d.Short,
+                Decription = d.Decription,
+                CreatedAt = d.CreatedAt,
+                ImgUrl = d.ImgUrl
+            }).ToList();
             return View(model);
         }
     }

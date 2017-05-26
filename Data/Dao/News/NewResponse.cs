@@ -17,7 +17,7 @@ namespace Data.Dao.News
         public string Title { get; set; }
         public string Short { get; set; }
         public string Decription { get; set; }
-        public byte[] ImgUrl { get; set; }
+        public string ImgUrl { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool IsActive { get; set; }
         public int NewTypeId { get; set; }

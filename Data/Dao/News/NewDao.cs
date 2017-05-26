@@ -18,21 +18,26 @@ namespace Data.Dao.News
             db = new lawfirmDbContext();
         }
 
-        public NewResponse GetAllNewsByTypeId(int typeid, int numberTake)
+        public NewResponse GetAllNewsByTypeId(int typeid, int numberTake, int except = 0)
         {
-
+            var qu
             var res = new NewResponse
             {
-                News = db.TN_TinTuc.Where(d => d.TypeId == typeid && d.IsActive.Value).OrderByDescending(d => d.Id).Take(numberTake).Select(d => new NewDetail()
+                News = db.TN_TinTuc.Where(d => d.TypeId == typeid && d.IsActive.Value).OrderByDescending(d => d.Id).Take(numberTake).ToList().Select(d => new NewDetail()
                 {
                     Id = d.Id,
                     Decription = d.Description,
                     Short = d.Short,
-                    ImgUrl = d.Image,
+                    ImgUrl = "data:image;base64," + Convert.ToBase64String(d.Image),
                     Title = d.Title,
                     CreatedAt = d.CreateAt ?? DateTime.Now
                 }).ToList()
             };
+            if (except > 0)
+            {
+                res.News = res.News.Where(d => d.Id != except).ToList();
+            }
+
             return res;
         }
 
@@ -44,7 +49,7 @@ namespace Data.Dao.News
             {
                 Id = news.Id,
                 Decription = news.Description,
-                ImgUrl = news.Image,
+                ImgUrl = "data:image;base64," + Convert.ToBase64String(news.Image),
                 Short = news.Short,
                 Title = news.Title,
                 CreatedAt = news.CreateAt ?? DateTime.Now,

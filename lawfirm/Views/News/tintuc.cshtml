@@ -1,26 +1,53 @@
-﻿@model lawfirm.Models.News.TintucModel
+﻿@model lawfirm.Models.News.DetailTinTucModel
 @{
     ViewBag.Title = "Tin tức";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="clearfix">
-    <div class="main">
-        <div class="images">
-            <img src="images/family.png" alt="Img" height="237" width="205">
-        </div>
-        <div class="details">
-            @*<p class="info">
-                
-            </p>*@
-            <h2>@Model.Title</h2>
-            <p>
-                @Model.Short
-            </p>
-            <p>
-                @Model.Decription
-            </p>
+    <div class="main-second">
+        @*<div class="images">
+                <img src="images/family.png" alt="Img" height="237" width="205">
+            </div>
+            <div class="details">
+
+                <h2>@Model.TinTuc.Title</h2>
+                <p>
+                    @Model.TinTuc.Short
+                </p>
+                <p>
+                    @Model.TinTuc.Decription
+                </p>
+            </div>*@
+
+        <article>
+            <div>
+                @Model.TinTuc.CreatedAt
+            </div>
+            <div>
+                <h1>@Model.TinTuc.Title</h1>
+            </div>
+            <div>
+                <p>@Model.TinTuc.Short</p>
+            </div>
+            <div>
+                <img class="img-responsive" src="@Model.TinTuc.ImgUrl" alt="" />
+            </div>
+            <div>
+                @Model.TinTuc.Decription
+            </div>
+        </article>
+        <div>
+            <ul>
+
+                @foreach (var news in Model.TinTucCungLoai)
+                {
+                    <li><a href="@Html.Raw(Url.Action("Tintuc","News", new {id = news.Id }))">@news.Title</a></li>
+                }
+
+            </ul>
         </div>
     </div>
+
 </div>
 

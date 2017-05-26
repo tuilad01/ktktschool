@@ -29,7 +29,7 @@ img {
     }
 
 .clearfix {
-    width: 1024px;
+    width: 991px;
     margin: 0 auto;
 }
 
@@ -373,7 +373,11 @@ p {
         .featured li .more {
             margin-left: 4px;
         }
-
+.main-second {
+    float: left;
+    width: 729px;
+    padding: 0;
+}
 .main {
     float: left;
     min-height: 960px;
@@ -593,7 +597,7 @@ p {
         .news > li p.info, .details p.info {
             font-size: 11px;
             margin: 0;
-            padding-top: 24px;
+            /*padding-top: 24px;*/
         }
 
 .author {
@@ -838,4 +842,18 @@ p {
 }
 #txt-nameTest {
     width: 100%;   
+}
+
+.news > li{
+    -moz-min-width: 756px;
+    -ms-min-width: 756px;
+    -o-min-width: 756px;
+    -webkit-min-width: 756px;
+    min-width: 756px;
+}
+.img-news {
+    height: 150px;
+    width: 250px;
+    display: block;
+    overflow: hidden;
 }

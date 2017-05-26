@@ -234,6 +234,7 @@
     <Compile Include="Models\Login\LoginRegisterModel.cs" />
     <Compile Include="Models\Login\UserAuthen.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\News\DetailTinTucModel.cs" />
     <Compile Include="Models\News\ListTintucModel.cs" />
     <Compile Include="Models\News\TintucModel.cs" />
     <Compile Include="Models\Practices\AnswerModel.cs" />
