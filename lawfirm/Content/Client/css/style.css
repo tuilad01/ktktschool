@@ -381,7 +381,7 @@ p {
 .main {
     float: left;
     min-height: 960px;
-    width: 641px;
+    width: 740px;
     padding: 0 0 0 32px;
 }
 
@@ -804,16 +804,9 @@ p {
         margin-left: -20px;
     }
 
-.form-control {
-    width: 100%;
-    margin-bottom: 6px;
-}
-.main .box-test .form-control{
-    width: 158%;
-}
-#from-register .form-control{
-    width: 113%;
-}
+
+
+
 .img-practices {
     width: 240px;
     height: 138px;
@@ -826,9 +819,11 @@ p {
 }
 
 .box-test .control-label {
-    text-align: right;
+    text-align: left;
     margin-top: 7px;
     color: #626262;
+    width: 220px;
+    
 }
 .box-testDone {
            margin-top: -4px;
@@ -856,4 +851,18 @@ p {
     width: 250px;
     display: block;
     overflow: hidden;
+}
+.flexbox {
+    display: flex;
+}
+.input-test {
+    width: 233px;
+    margin-right: 10px;
+}
+/*specical*/
+.input-name {
+    width: 720px;
+}
+.input-name .control-label {
+    width: 165px;
 }

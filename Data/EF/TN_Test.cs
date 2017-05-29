@@ -29,8 +29,7 @@ namespace Data.EF
         public int? TotalQuestion { get; set; }
 
         public int? TotalRigth { get; set; }
-
-        [StringLength(10)]
+       
         public string Description { get; set; }
 
         public int? ResultId { get; set; }

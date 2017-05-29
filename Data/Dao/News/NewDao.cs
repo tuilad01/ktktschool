@@ -20,7 +20,6 @@ namespace Data.Dao.News
 
         public NewResponse GetAllNewsByTypeId(int typeid, int numberTake, int except = 0)
         {
-            var qu
             var res = new NewResponse
             {
                 News = db.TN_TinTuc.Where(d => d.TypeId == typeid && d.IsActive.Value).OrderByDescending(d => d.Id).Take(numberTake).ToList().Select(d => new NewDetail()

@@ -163,7 +163,16 @@ namespace Data.Dao.Test
                 Description = nameTest
             };
             db.TN_Test.Add(tnTest);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                var error = ex;
+                throw;
+            }
+        
             test.ForEach(d =>
             {
                 var dapan = db.TN_CauHoi_DapAn.Where(v => v.CauHoi_Id == d.Id).ToList();
