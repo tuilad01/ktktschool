@@ -217,6 +217,7 @@
     <Compile Include="Controllers\CertificateController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Message.cs" />
@@ -689,14 +690,14 @@
     <Content Include="Content\Admin\js\flot-data.js" />
     <Content Include="Content\Admin\js\morris-data.js" />
     <Content Include="Content\Admin\Login\style.css" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.js" />
-    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
-    <Content Include="Content\bootstrap-3.3.7-dist\js\npm.js" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Client\css\style.css" />
@@ -763,6 +764,8 @@
     <Content Include="Content\images\logo2.png" />
     <Content Include="Content\jquery.bxslider.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery.bxslider.js" />
     <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="favicon.ico" />
@@ -1102,14 +1105,6 @@
     <Content Include="Content\Admin\less\sb-admin-2.less" />
     <Content Include="Content\Admin\less\variables.less" />
     <Content Include="Content\Client\images\logo1.psd" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Practices\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\List.cshtml" />
@@ -1160,6 +1155,12 @@
     <Content Include="Areas\Admin\Views\News\Create.cshtml" />
     <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1219,6 +1220,7 @@
     <Content Include="Views\Login\_Login.cshtml" />
     <Content Include="Views\Shared\_LayoutPractices.cshtml" />
     <Content Include="Views\News\TinTuc.cshtml" />
+    <Content Include="Views\HomePage\Page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

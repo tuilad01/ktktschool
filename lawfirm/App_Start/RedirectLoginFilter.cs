@@ -4,7 +4,7 @@ using Data.Dao.Users;
 using lawfirm.Common;
 using lawfirm.Models.Home;
 
-namespace lawfirm.App_Start
+namespace lawfirm
 {
     public class RedirectLoginFilter : ActionFilterAttribute
     {

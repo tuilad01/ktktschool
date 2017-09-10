@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lawfirm", "lawfirm\lawfirm.csproj", "{DC26FC04-F02C-440B-A3F2-0CC7C87B6DD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTKT", "lawfirm\KTKT.csproj", "{DC26FC04-F02C-440B-A3F2-0CC7C87B6DD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{638247F7-6F85-4ED3-AAB0-3BBCD53F62A3}"
 EndProject
