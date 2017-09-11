@@ -698,9 +698,11 @@
     <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.min.css" />
     <Content Include="Content\bootstrap-4.0.0-beta-dist\js\bootstrap.js" />
     <Content Include="Content\bootstrap-4.0.0-beta-dist\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-4.0.0-beta-dist\js\popper.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Client\css\style.css" />
+    <Content Include="Content\Client\images\abc.png" />
     <Content Include="Content\Client\images\bg-adbox.png" />
     <Content Include="Content\Client\images\bg-footer.png" />
     <Content Include="Content\Client\images\bg-footnote.jpg" />
@@ -764,6 +766,16 @@
     <Content Include="Content\images\logo2.png" />
     <Content Include="Content\jquery.bxslider.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\ajax-loader.gif" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.carousel.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.carousel.min.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.theme.default.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.theme.default.min.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.theme.green.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.theme.green.min.css" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\assets\owl.video.play.png" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\owl.carousel.js" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\owl.carousel.min.js" />
     <Content Include="Content\style.css" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery.bxslider.js" />
@@ -775,6 +787,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Views\ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1161,6 +1174,8 @@
     <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.css.map" />
     <Content Include="Content\bootstrap-4.0.0-beta-dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\LICENSE" />
+    <Content Include="Content\OwlCarousel2-2.2.1\dist\README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -8,52 +8,229 @@
     <title>KTTN</title>
     @*css file*@
     <link href="~/Content/bootstrap-4.0.0-beta-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/style.css" rel="stylesheet" />
-    @*script file*@
-    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
-    <script src="~/Content/bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
-    
+
+
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <ul>
-            <li>Your menu</li>
-        </ul>
-    </nav>
-</header>
-	
-<section>
-	
-    <article>
-        <header>
-            <h2>Article title</h2>
-            <p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
-        </header>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-    </article>
-		
-    <article>
-        <header>
-            <h2>Article title</h2>
-            <p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
-        </header>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-    </article>
-		
-</section>
+    <header>
+        <div class="logo">
+            <img src="~/Content/Client/images/logo2.png" />
+        </div>
+        <div class="right-header">
+            <div class="container-social">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+            </div>
 
-<aside>
-    <h2>About section</h2>
-    <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</aside>
+            <div class="container-login">
+                <a href="#">ĐĂNG NHẬP</a>
+                <a href="#">ĐĂNG KÝ</a>
+            </div>
 
-<footer>
-    <p>Copyright 2009 Your name</p>
-</footer>
+            <nav class="mobile">
+                <div id="toggle-bar">
+                    <i class="fa fa-bars" aria-hidden="true"></i> KTKT
+                </div>
+                <ul>
+                    <li class="nav-item"><a href="#">TRANG CHỦ</a></li>
+                    <li>
+                        <a href="#">TRẮC NGHIỆM</a>
+                        <ul>
+                            <li><a href="#">MẪU GIÁO</a></li>
+                            <li><a href="#">TIỂU HỌC</a></li>
+                            <li>TRUNG HỌC CƠ SỞ</li>
+                            <li>TRUNG HỌC PHỔ THÔNG</li>
+                            <li>SINH VIÊN</li>
+                            <li>IQ</li>
+                            <li>BẰNG LÁI</li>
+                            <li>THỂ THAO</li>
+                            <li>THỂ THAO</li>
+                            <li>GIẢI TRÍ</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">HỎI ĐÁP</a></li>
+                    <li>
+                        <a href="#">TIN TỨC</a>
+                        <ul>
+                            <li>TIN TỨC</li>
+                            <li>THÔNG BÁO</li>
+                            <li>SỰ KIỆN</li>
+                            <li>THỦ THUẬT</li>
+                            <li>GÓC HỌC SINH</li>
+                            <li>GÓC PHỤ HUYNH</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+
+    <section id="slider" class="owl-carousel owl-theme">
+        <div class="item"><h4>1</h4></div>
+        <div class="item"><h4>2</h4></div>
+        <div class="item"><h4>3</h4></div>
+        <div class="item"><h4>4</h4></div>
+        <div class="item"><h4>5</h4></div>
+        <div class="item"><h4>6</h4></div>
+        <div class="item"><h4>7</h4></div>
+        <div class="item"><h4>8</h4></div>
+        <div class="item"><h4>9</h4></div>
+        <div class="item"><h4>10</h4></div>
+        <div class="item"><h4>11</h4></div>
+        <div class="item"><h4>12</h4></div>
+    </section>
+
+    <section id="wrapper">
+        <aside class="left">
+            <div class="box-menu">
+                <p class="title">TRẮC NGHIỆM</p>
+                <a href="#">MẪU GIÁO</a>
+                <a href="#">TIỂU HỌC</a>
+                <a href="#">TRUNG HỌC CƠ SỞ</a>
+                <a href="#">TRUNG HỌC PHỔ THÔNG</a>
+                <a href="#">SINH VIÊN</a>
+                <a href="#">IQ</a>
+                <a href="#">BẰNG LÁI XE</a>
+                <a href="#">THỂ THAO</a>
+                <a href="#">GIẢI TRÍ</a>
+            </div>
+            <div class="box-menu">
+                <p class="title">DANH MỤC</p>
+                <a href="#">TIN TỨC</a>
+                <a href="#">THÔNG BÁO</a>
+                <a href="#">SỰ KIỆN</a>
+                <a href="#">THỦ THUẬT</a>
+                <a href="#">GÓC HỌC SINH</a>
+                <a href="#">GÓC PHỤ HUYNH</a>
+            </div>
+            <div class="box-menu">
+                <p class="title">BÀI VIẾT MỚI</p>
+                <a href="#">1. Tên bài viết 1 (10/8/2017)</a>
+                <a href="#">2. Tên bài viết 1 (10/8/2017)</a>
+                <a href="#">3. Tên bài viết 1 (10/8/2017)</a>
+                <a href="#">4. Tên bài viết 1 (10/8/2017)</a>
+                <a href="#">5. Tên bài viết 1 (10/8/2017)</a>
+            </div>
+        </aside>
+        <div class="content">
+            <div class="practices">
+                <div class="form-group">
+                    <label class="control-label">Chọn lớp</label>
+                    <select class="form-control">
+                        <option value="9">Lớp 9</option>
+                        <option value="9">Lớp 9</option>
+                        <option value="9">Lớp 9</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Chọn môn</label>
+                    <select class="form-control">
+                        <option value="9">Anh văn</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary">Bắt đầu</button>
+            </div>
+
+            <p class="one-title">Chọn trình độ trắc nghiệm</p>
+
+            <div class="container-practices">
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+
+                <a href="#" class="box-practices">
+                    <img src="~/Content/Client/images/maugiao1.jpg" alt="" />
+                    <p>Mẫu giáo</p>
+                    <p>Những câu hỏi kiểm tra kiến thức dành cho mẫu giáo</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-logo">
+            <img src="~/Content/Client/images/logo2.png" alt="" />
+        </div>
+        <div>
+
+        </div>
+        <div class="partner">
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+            <img src="~/Content/Client/images/abc.png" alt="" />
+        </div>
+    </footer>
+    @*script file*@
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="~/Content/bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/OwlCarousel2-2.2.1/dist/owl.carousel.min.js"></script>
+
+    <script src="~/Scripts/script.js"></script>
 </body>
 
 </html>

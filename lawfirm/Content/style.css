@@ -1,2 +1,123 @@
-﻿body {
+﻿* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: none;
+}
+
+.container-social {
+    display: none;
+}
+
+.container-login {
+    display: none;
+}
+
+nav.mobile ul {
+    list-style: none;
+}
+
+nav.mobile {
+    background-color: #58614e;
+    color: #fff;
+}
+
+    nav.mobile a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav.mobile li {
+        width: 100%;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+nav.mobile li:last-child {
+    border-bottom: none;
+}
+  
+    nav.mobile > ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    nav.mobile > ul {
+        display: none;
+    }
+
+#toggle-bar {
+    padding: 5px;
+}
+
+    #toggle-bar > i {
+        color: #fff;
+        padding: 10px;
+    }
+
+        #toggle-bar > i:hover {
+            background-color: #fff;
+            color: #000;
+            cursor: pointer;
+        }
+
+nav.mobile > ul > li > ul {
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+    transition: opacity 1s ease-out;
+    padding-left: 10px;
+}
+
+nav.mobile > ul > li:hover ul {
+    opacity: 1;
+    height: auto;
+}
+@media (min-width: 767px) {
+    .logo {
+        display: block;
+    }
+
+    .container-social {
+        display: block;
+    }
+
+    .container-login {
+        display: block;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        background-color: #58614e;
+    }
+    .logo > img {
+        width: 200px;
+    }
+    .right-header {
+        width: 100%;
+    } #toggle-bar {
+        display: none;
+    }
+      nav.mobile {
+          background-color: initial;
+      }
+    nav.mobile > ul {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    nav.mobile > ul > li {
+        width: 16%;
+        
+    }
+    nav.moblie > ul > li > ul {
+        position: absolute;
+    }
 }
